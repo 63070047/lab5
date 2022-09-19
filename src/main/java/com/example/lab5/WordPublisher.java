@@ -43,7 +43,8 @@ public class WordPublisher {
 
     @RequestMapping(value = "/getSentence", method = RequestMethod.GET)
     public Sentence getSentence(){
-        return getSentence();
+        Object sen = rabbitTemplate.convertSendAndReceive("get","");
+        return (Sentence)sen;
     }
 
     @RequestMapping(value = "/proof/{s}", method = RequestMethod.GET)
