@@ -43,8 +43,6 @@ public class MyView2 extends HorizontalLayout {
         v2.add(addSence, btnAddSentence, showGoodSence, showBadSence, btnShowSentence);
         add(v1,v2);
 
-        goodWordBox.setItems(words.goodWords);
-        badWordBox.setItems(words.badWords);
 
         btnGoodWord.addClickListener(event -> {
             String word = addWord.getValue();
