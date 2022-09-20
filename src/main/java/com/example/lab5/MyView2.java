@@ -19,8 +19,9 @@ public class MyView2 extends HorizontalLayout {
     private TextField addWord, addSence;
     private TextArea showGoodSence, showBadSence;
     private Button btnBadWord, btnGoodWord, btnAddSentence, btnShowSentence;
-
+    private Word words = new Word();
     public MyView2() {
+
         addWord = new TextField("Add Word");
         addSence = new TextField("Add Sentence");
         showGoodSence = new TextArea("Good Sentences");
@@ -41,6 +42,9 @@ public class MyView2 extends HorizontalLayout {
         v1.add(addWord, btnGoodWord, btnBadWord, goodWordBox, badWordBox);
         v2.add(addSence, btnAddSentence, showGoodSence, showBadSence, btnShowSentence);
         add(v1,v2);
+
+        goodWordBox.setItems(words.goodWords);
+        badWordBox.setItems(words.badWords);
 
         btnGoodWord.addClickListener(event -> {
             String word = addWord.getValue();
